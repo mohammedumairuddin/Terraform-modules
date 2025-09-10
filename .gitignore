@@ -1,0 +1,16 @@
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Terraform lock file
+.terraform.lock.hcl
+
+# Kube config / sensitive configs
+#kube-config-file-mv-location-cmd
+#kubeconfig.tpl

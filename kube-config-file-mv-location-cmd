@@ -1,0 +1,16 @@
+mkdir -p ~/.kube
+cp /home/ubuntu/kubeconfig-private-eks.yaml ~/.kube/config
+
+# By default in any cluster metric server not installed so we have to install as per requirement using below command
+
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+# after run the below command to add two arguements for insecuretls
+
+kubectl -n kube-system edit deployment metrics-server
+
+
+# And under spec.template.spec.containers.args, add:
+
+- --kubelet-insecure-tls
+- --kubelet-preferred-address-types=InternalIP
