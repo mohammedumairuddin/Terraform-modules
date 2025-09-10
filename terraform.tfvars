@@ -1,5 +1,11 @@
-vpc_cidr             = "10.0.0.0/16"
-public_subnets_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
-private_subnets_cidrs = ["10.0.3.0/24", "10.0.4.0/24"]
-cluster_name          = "private-eks-cluster"
-aws_region            = "ap-northeast-1"
+aws_region            = "eu-west-3"
+cluster_name          = "private-eks-cluster-ankita"
+vpc_cidr              = "10.10.0.0/16"
+public_subnets_cidrs  = ["10.10.1.0/24", "10.10.2.0/24"]
+private_subnets_cidrs = ["10.10.11.0/24", "10.10.12.0/24"]
+availability_zones    = ["eu-west-3a", "eu-west-3b"]
+node_group_instance_types = ["t2.medium"]
+node_group_desired      = 2
+node_group_min          = 1
+node_group_max          = 3
+cluster_version         = "1.28"

@@ -1,7 +1,7 @@
 resource "aws_iam_role" "eks_cluster" {
-  name               = "${var.cluster_name}-cluster-role"
+  name               = "${var.cluster_name}-cluster-role-ankita"
   assume_role_policy = data.aws_iam_policy_document.eks_assume_role.json
-  tags               = { Name = "${var.cluster_name}-cluster-role" }
+  tags = { Name = "${var.cluster_name}-cluster-role" }
 }
 
 data "aws_iam_policy_document" "eks_assume_role" {
@@ -25,9 +25,9 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_AmazonEKSServicePolicy" {
 }
 
 resource "aws_iam_role" "node_group" {
-  name               = "${var.cluster_name}-node-role"
+  name               = "${var.cluster_name}-node-role-ankita"
   assume_role_policy = data.aws_iam_policy_document.node_assume_role.json
-  tags               = { Name = "${var.cluster_name}-node-role" }
+  tags = { Name = "${var.cluster_name}-node-role" }
 }
 
 data "aws_iam_policy_document" "node_assume_role" {
